@@ -1,2 +1,2 @@
 # wp-localbiz-child
-Child theme for wp-localbiz
+WordPresss Child Theme for wp-localbiz (https://github.com/lorenzodetomasi/wp-localbiz).
