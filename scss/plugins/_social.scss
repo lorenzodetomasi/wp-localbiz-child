@@ -1,0 +1,24 @@
+@import "compass/css3", "settings";
+ul.social-links{
+  [class^="social-icon-"]:before,
+  [class*=" social-icon-"]:before,
+  .material-icons {
+    padding: $navs-padding;
+    background-color: $buttons-color;
+    color: $color-on-buttons-color;
+  }
+  a[class^="social-icon-"]:hover:before,
+  a[class*=" social-icon-"]:hover:before,
+  a:hover .material-icons {
+    background-color: $buttons-hover-color;
+    color: $color-on-buttons-hover-color;
+  }
+  [class^="social-icon-"] .button-text,
+  [class*=" social-icon-"] .button-text,
+  .material-icons +.button-text {
+    padding: $navs-padding;
+  }
+  .material-icons {
+    font-size: inherit;
+  }
+}

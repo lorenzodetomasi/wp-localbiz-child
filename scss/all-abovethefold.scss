@@ -1,0 +1,206 @@
+@import "compass/css3", "settings",
+  "core/basic_layout", 
+  "core/grid_all",
+  "core/navs",
+  "core/align",
+  "core/colors_and_backgrounds",
+  "core/wordpress",
+  "header_all",
+  "headings";
+#page,
+body > footer {
+  width: 100%;
+  max-width: $page-max-width;
+}
+#page,
+.page-shadow {
+  @include box-shadow(rem-calc(0 0 20px 15px) rgba(0, 0, 0, 0.2));
+}
+body.header-fixed {
+  #header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+}
+#header {
+  width: 100%;
+  background: $header-main-background;
+  max-width: $header-max-width;
+}
+#header-main {
+  h1.sitename {
+    a,
+    img {
+      @include transition-property(all);
+      @include transition-duration(1s);
+    }
+  }
+  a[href="#nav1"] {
+    margin-left: auto;
+  }
+}
+body.header-tall {
+  #header {
+      height: $hgrid-header-height;
+  }
+  #header-main {
+    height: $hgrid-header-main-height;
+    h1.sitename {
+      a,
+      img {
+        height: $hgrid-logo-height;
+      }
+    }
+  }    
+}
+body.has_breadcrumbs {
+  #main {
+    padding-top: 0;
+  }
+  #breadcrumbs {
+    padding-top: $hgrid-content-start-top;
+  }
+}
+#main {
+  max-width: $body-max-width;
+  padding-top: $vgrid-content-start-top;
+}
+.content-container {
+  padding-left: $vgrid-page-padding-h;
+  padding-right: $vgrid-page-padding-h;
+}
+.section-padding-top,
+.section {
+  padding-top: $vgrid-content-start-top;
+}
+.section-padding-bottom,
+.section {
+  padding-bottom: $vgrid-content-start-top;
+}
+// Links
+a {
+  transition: color .3s ease-out, background-color .3s ease-out;
+  color: $text-link-color;
+  text-decoration: none;
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    color: $text-link-hover-color;
+    outline: 0;
+  }
+}
+#header,
+.shadow-bottom {
+  @include shadow-bottom;
+}
+#header-top {
+  border-bottom: 1px solid $grigio-chiaro;
+  @if variable-exists(header-top-link-color) {
+    a {
+      color: $header-top-link-color;
+      &:hover {
+        color: $header-top-link-hover-color;
+      }
+    }
+  }
+  .social {
+    margin-left: auto;
+  }
+}
+#header-main {
+  h1.sitename {
+    margin-bottom: 0;
+    a {
+      display: block;
+    }
+    a,
+    img {
+      height: $vgrid-logo-height;
+      width: auto;
+    }
+  }
+  .cta {
+    margin-left: auto;
+  }
+}
+#cover {
+  width: 100%;
+  height: calc(100vh - #{$vgrid-header-height});
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-color: $color1;
+  background-repeat: no-repeat;
+}
+address {
+  font-style: normal;
+}
+.navs-padding-v {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+.term-list {
+  .align-middle > div {
+    margin-top: -1em;
+  }
+}
+figure.circle {
+  margin: 0 1em 0 1em;
+  img {
+    width: 12em;
+    height: 12em;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+  } 
+}
+.button.emergency {
+  background-color: $rosso_carminio;
+}
+.typicalAgeRange strong {
+  color: $color3;
+}
+/*
+#header {
+  a:not(.button):not(.cta) {
+    color: $header-link-color;
+    &:hover {
+      color: $header-link-hover-color;
+    }
+  }
+  .link,
+  .button {
+    margin: 0;
+  }
+  h1.sitename {
+    margin-bottom: 0;
+    a {
+      display: block;
+    }
+    a,
+    img {
+      height: rem-calc(36px);
+    }
+  }
+  .box-wrapper {
+    border-top: 1px solid $grigio-chiaro;
+  }
+}
+.tagline {
+  margin-bottom: 0;
+  padding-left: $gutter;
+  font-size: 1em;
+  background-color: inherit;
+}
+*/
+// Lists of articles
+.border-top {
+  border-top: 2px solid $color2-lighter;
+}
+#footer {
+  max-width: $footer-max-width;
+}

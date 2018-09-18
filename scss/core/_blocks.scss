@@ -1,0 +1,58 @@
+// Modified on 2016-10-25
+p {
+  margin: 0 0 .5em 0;
+  padding: 0;
+}
+address {
+        font-style: normal;
+        margin-bottom: 0;
+}
+blockquote {
+  border: 0 none;
+  margin: 0 0 $gutter 0;
+  padding: 0;
+  &.box {
+    position: relative;
+    padding: $gutter $gutter $gutter $gutter*4;
+    background-color: $color1-lighter;
+    margin-bottom: $gutter;
+    &:before {
+      content: "\201C";
+      font-family: Georgia, serif;
+      font-size: 4em;
+      color: $color1;
+      position: absolute;
+      left: $gutter;
+      top: 0;
+    }
+    &:after{
+      content: "";
+    }
+  }
+}
+/* Lists */
+ul,
+ol {
+  margin: 0 0 $gutter $gutter;
+  padding: 0;
+  &.list-style-none {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+ul {
+  list-type: square;
+  ul {
+    list-type: circle;
+  }     
+}
+ol {
+        
+}
+ul,
+ol {
+  &.list-style-none {
+    list-style: none;
+    margin-left: 0;
+  }
+}

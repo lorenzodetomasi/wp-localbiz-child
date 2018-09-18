@@ -1,0 +1,28 @@
+// Aspect Ratio
+[class^='ar_'], 
+[class*=' ar_'] {
+  position: relative;// If you want content inside of it
+  @include box-sizing(border-box);
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }  
+}
+.ar_1_1 {
+  padding-top: 100%;// 1:1 Aspect Ratio
+}
+.ar_3_2 {
+padding-top: 100%/3*2;// 3:2 Aspect Ratio
+}
+.ar_4_3 {
+  padding-top: 100%/4*3;// 4:3 Aspect Ratio
+}
+.ar_8_5 {
+  padding-top: 100%/8*5;// 8:5 Aspect Ratio
+}
+.ar_16_9 {
+  padding-top: 100%/16*9;// 16:9 Aspect Ratio
+}

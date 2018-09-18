@@ -1,0 +1,225 @@
+@import "core/functions", "core/colors","core/mixins";
+
+// VARIABLES
+// WordPress
+$wpadminbar-breakpoint: 783px;
+$wpadminbar-lt_breakpoint-height: rem-calc(46px);//wpadminbar height if window width < $wpadminbar-breakpoint
+$wpadminbar-ge_breakpoint-height: rem-calc(32px);//wpadminbar height if window width >= $wpadminbar-breakpoint
+
+// Layout widths
+// Page width strictly depends on images resolution availability.
+// Evaluate your image sources and set the value.
+$vgrid-max-width: 650px;// Set the max-window width for vertical layout, optimized for portrait orientation. Round up, default: 1024px
+$page-max-width: 1280px;
+$header-max-width: $page-max-width;
+$body-max-width: $page-max-width;
+$content-max-width: 1000px;
+$footer-max-width: $page-max-width;
+
+$menu-breakpoint: $page-max-width;
+
+$gutter: rem-calc(16px);
+$vgrid-page-padding-h: $gutter;
+$hgrid-page-padding-h: $gutter*2;
+
+$touch-min-size: rem-calc(36px);
+$touch-size: rem-calc(48px);
+
+// Header
+// Logo
+$vgrid-logo-url: url(../images/logo.svg);
+$hgrid-logo-url: url(../images/logo-v.svg);
+$header-top-height: $touch-min-size;// default: $touch-min-size
+$vgrid-logo-height: rem-calc(36px);
+$vgrid-header-main-height: $touch-size;// default: $touch-size
+$vgrid-header-height: $header-top-height + $vgrid-header-main-height;
+$hgrid-logo-height: rem-calc(48px);
+$hgrid-header-main-height: $touch-size*2;// default: $touch-size
+$hgrid-header-height: $header-top-height + $hgrid-header-main-height;
+$nav1-height: $touch-size;
+$tagline-height: rem-calc(22px);
+
+// Content start top
+$vgrid-content-start-top: $vgrid-header-height;
+$hgrid-content-start-top: $hgrid-header-height;
+$vgrid-content-start-top-wpadminbar: $wpadminbar-lt_breakpoint-height + $vgrid-header-height;
+$hgrid-content-start-top-wpadminbar: $wpadminbar-ge_breakpoint-height + $hgrid-header-height;
+
+// Fonts
+$text-font-family: Roboto,Helvetica,Helvetica Neue,sans-serif;
+$headings-font-family: 'Roboto Slab','Trebuchet MS',Georgia,serif;
+$quotes-font-family: $text-font-family;
+$navs-font-family: $text-font-family;
+$forms-font-family: $text-font-family;
+$code-font-family: Hack, monospace;
+$code-font-size: 1em;
+
+// Colors
+$color1: $rosso_fragola;
+$color1-lighter: lighten($color1, 50%);//default: lighten($color1, 50%);
+$color2: $blu_marina;
+$color2-lighter: $blu_pavone;//default: lighten($color2, 50%);
+$color3: #0190e2;
+$color3-lighter: lighten($color3, 50%);//default: lighten($color3, 50%);
+$color3-darker: #0073aa;//default: darken($color3, 50%);
+//$color4: $giallo_cadmio;
+$grigio_chiaro: #f6f6f6;
+
+$color-on-black: $bianco;
+
+$highlight-color: $giallo_cadmio;
+$text-color: #444;
+$meta-color: $grigio_scuro;
+$placeholder-background: #eee;// default: #eee; use for maps or image background, before loading
+
+//Buttons
+$buttons-color: $color3;
+$color-on-buttons-color: $color-on-black;
+$buttons-hover-color: $color3-darker;
+$color-on-buttons-hover-color: $color-on-black;
+$buttons-active-color: lighten($buttons-color, 50%);
+$buttons-disabled-color: $color3-lighter;
+$button-secondary-border-width: 2px;
+
+//Landing page
+$unique_selling_proposition-color: $color2;
+$problem-color: $color2;
+//Call-to-action (CTA)
+$cta-color: $color1;
+$color-on-cta-color: $bianco;
+$cta-border-radius: 50%;
+$cta-hover-color: $color2;
+$color-on-cta-hover-color: $bianco;
+
+// Typography
+$text-font-size: 1em;//reset: 16px
+$text-font-weight: 400;
+$text-line-height: 1.5em;
+$text-link-color: $buttons-color;
+$text-link-hover-color: $buttons-hover-color;
+$text-strong-font-weight: bold;
+$text-selection-background: $giallo_cadmio;
+$text-selection-color: $nero;
+
+$text-small-font-size: 80%;//Reset: 80%
+$text-small-font-weight: normal;
+$text-small-color: inherit;
+
+$margin: $text-line-height;
+$p-margin: $margin/2;
+$blank-space-width: .2em;
+
+$body-background: $color2-lighter;//By default, use $color2; reset: #f5f5f5
+$page-background: $bianco;
+$page-box-shadow: rem-calc(0 0 20px 15px) rgba(0, 0, 0, 0.2);
+$header-top-background: $bianco;//By default, use $nero
+$header-main-background: $bianco;
+$header-border-bottom: 1px solid $color1;
+//$page-body-background: $bianco;
+//$footer-background: $color1;
+//$colophon-background: transparent;
+
+// Navs (.nav, .button, .link)
+$navs-font-family: $navs-font-family;
+$navs-font-size: 1rem;
+$navs-text-transform: none;
+$navs-line-height: $text-line-height;
+$navs-padding: 0.5em;// If $navs-font-size is changed, adjust to get 36px button height
+$navs48-padding: 0.875em;// If $navs-font-size is changed, adjust to get 48px button height
+// Buttons
+//$buttons-margin: .25em .25em .25em 0;
+$buttons-border-radius: .2em;
+//$buttons48-line-height: $button-line-height;
+//$buttons48-margin: $button-margin;
+
+//Call-to-action (CTA)
+$cta-padding: 0.5em 1em;
+$cta-color: $color1;
+$color-on-cta-color: $bianco;
+$cta-border-radius: 1em;
+$cta-hover-color: $color2;
+$color-on-cta-hover-color: $bianco;
+
+//Headings
+$headings-color: $text-color;//Default: $color1
+$headings-font-weight: 300;
+$headings-line-height: 1.2em;
+$headings-font-style: normal;
+
+$headings-strong-font-weight: bold;
+$headings-strong-color: inherit;
+//$headings-text-transform: uppercase;
+$headings-padding: 0;
+//$headings-margin: 0 0 $gutter*2 0;
+
+$breadcrumbs-background: $grigio_chiaro;
+$breadcrumbs-color: inherit;
+
+$tag-background: $grigio-chiaro;
+$tag-color: secondary-color;
+$tag-hover-background: $color1;
+$tag-hover-color: $bianco;
+
+// Forms
+@mixin navs-label-style(){
+  &,
+  & .text { 
+    color: $nero;
+  }
+}
+$question-margin: 0 0 $gutter 0;
+$field-margin: 0;
+$field-background: transparent;
+$field-border-color: $buttons-color;
+$field-border-width: 2px;
+$field-border-radius: 0;
+$field-hover-border-color: $buttons-hover-color;
+$field-focus-border-color: $buttons-hover-color;
+$placeholder-color: $meta-color;
+$selected-option-background-color: $color1;
+$fieldset-border: 1px solid $text-color;
+
+// Tables
+$thead-th-color: $color1;
+$thead-th-font-weight: bold;
+$thead-tr-border-bottom: 1px solid $color1;
+$table-caption-color: $color2;
+$table-caption-border-bottom: 2px solid $color1;
+$tbody-th-color: $color1;
+$tbody-th-font-weight: normal;
+$tbody-tr-border-bottom: 1px solid $color1;
+$tfoot-tr-border-bottom: 1px solid $color1;
+
+// Media
+$figure-margin: $gutter;
+
+// Negative Colors
+// Black or dark colours
+$headings-color-on-black: $bianco;
+$headings-link-color-on-black: $color3-lighter;
+$headings-link-hover-color-on-black: $headings-color-on-black;
+
+$text-link-color-on-black: $color1-lighter;
+$text-link-hover-color-on-black: $color-on-black;
+
+$highlight-color-on-black: $giallo_cadmio;
+
+$text-selection-background-on-black: $highlight-color-on-black;
+$text-selection-color-on-black: $nero;
+
+$unique_selling_proposition-color-on-black: $highlight-color-on-black;
+
+// Header
+$header-link-color: $color1;
+$header-link-hover-color: $color2;
+$header-top-link-color: $color2-lighter;
+$header-top-link-hover-color: $color2;
+
+// Table Pricing
+$table-pricing-background-light: #fbfbfc;
+$table-pricing-background-dark: #e6ebed;
+$table-pricing-action-background: $buttons-color;
+$table-pricing-action-color: $color-on-buttons-color;
+$table-pricing-action-hover-background: $buttons-hover-color;
+$table-pricing-action-hover-color: $color-on-buttons-hover-color;
+$table-pricing-features-color: #99a4a9;

@@ -1,0 +1,13 @@
+// Display
+.hgrid,
+.maxgrid,
+.print {
+  display: none !important;
+}
+// Page padding (Layout margin)
+.page-padding-h {
+    padding-left: $vgrid-page-padding-h;
+    padding-right: $vgrid-page-padding-h;
+}
+@include grid('vgrid-');
+@include box-model('vgrid-');

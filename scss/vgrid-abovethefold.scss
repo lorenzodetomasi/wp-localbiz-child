@@ -1,0 +1,64 @@
+@import "compass/css3", "settings";
+  .vgrid-section-padding-top,
+  .vgrid-section {
+    padding-top: $hgrid-content-start-top;
+  }
+  .vgrid-section-padding-bottom,
+  .vgrid-section {
+    padding-bottom: $hgrid-content-start-top;
+  }
+  // Grid
+  .hgrid,
+  .maxgrid,
+  .print {
+    display: none !important;
+  }
+  // Page padding (Layout margin)
+  .page-padding-h {
+      padding-left: $vgrid-page-padding-h;
+      padding-right: $vgrid-page-padding-h;
+  }
+  @include grid('vgrid-');
+  @include box-model('vgrid-');
+  // Header
+  #header {
+    .link .text {
+      display: none;
+    }
+  }
+  .tagline {
+    top: $vgrid-header-height;
+  }
+  #nav1 {
+    left: 0;
+    display: none;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    & > div {
+      background-color: $header-main-background;
+    }
+    li {
+      width: 100%;
+      border-top: 1px solid $grigio-chiaro;
+    }
+  }
+  #nav1_prodotti ul.dropdown {
+    display: block;
+  }
+  #footer address {
+    width: 100%;
+  }
+  section.term h3 {
+    border-top: 2px solid $color2;
+  }
+  .circle {
+    width: 100%;
+    text-align: center;
+    padding-top: $gutter;
+    @include flexbox((
+      order: 2
+    ));
+  }

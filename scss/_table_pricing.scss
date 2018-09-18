@@ -1,0 +1,69 @@
+.table-pricing {
+  h1 {
+    margin: 0;
+  }
+  h1 > :first-child {
+    background: $table-pricing-background-light;
+    padding: $gutter/2;
+  }
+  h1 > :last-child {
+    background: $table-pricing-background-dark;
+    padding: $gutter/2;
+  }
+  .flex {
+    ul {
+      list-style: none;
+      margin: 0;
+      background: $table-pricing-background-light;
+      li {
+        padding: $gutter/2;
+        &.feature {
+          color: $table-pricing-features-color;
+        }
+      }
+    }
+  }
+  .border-top {
+    border-top: 1px solid #e6ebed;
+  }
+  .action {
+    text-transform: uppercase;
+    margin: 0;
+    color: $table-pricing-action-color;
+    background: $table-pricing-action-background;
+    &.checkbox {
+      padding: 0 $gutter/2;
+    }
+    &:hover {
+      color: $table-pricing-action-hover-color;
+      background: $table-pricing-action-hover-background;
+      text-decoration: none;
+    }
+    .label {
+      border-bottom: 0 none;
+    }
+    .button-text {
+      vertical-align: middle;
+    }
+    .material-icons {
+      float: right;
+    }
+  }
+}
+form .table-pricing .action {
+  .field.checkbox {
+    [type="checkbox"]:not(:checked) + .label {
+      &:before,
+      &:after {
+        border-color: $table-pricing-action-color;
+      }
+    }
+    [type="checkbox"]:checked + .label {
+      &:before,
+      &:after {
+        border-right-color: $table-pricing-action-color;
+        border-bottom-color: $table-pricing-action-color;
+      }
+    }
+  }
+}

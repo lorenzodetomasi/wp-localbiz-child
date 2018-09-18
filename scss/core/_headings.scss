@@ -1,0 +1,56 @@
+@import "compass/css3", "settings", "pretotype";
+//large: 2rem
+//medium: 1.2rem
+//normal: 1rem
+//small: .8rem
+
+h5, .h5 {
+  font-family: $headings-font-family;
+  font-size: .9em; font-size: .9rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: $gutter/2 0 0 0;
+}
+h4, .h4 {
+  font-family: $headings-font-family;
+  font-size: 1em; font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0;
+}
+h3, .h3 {
+  font-family: $headings-font-family;
+  font-size: 1em; font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0 0 $gutter 0;
+}
+h3.text-align-center {
+  font-size: 1.2em; font-size: 1.2rem;
+  color: $color1;
+  text-align: center;
+  border-bottom: 2px solid $color1;
+  padding-bottom: $gutter/2;
+}
+//section h1,
+h2, .h2 {
+  font-family: $headings-font-family;
+  font-size: 1.2em; font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0 0 $gutter 0;
+}
+h1, .h1 {
+  font-family: $headings-font-family;
+  font-size: 2rem; font-size: 2em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0 0 $gutter 0;
+}
+.eyelet {
+  font-family: $text-font-family;
+  font-size: 1.2em; font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0 0 $gutter 0;  
+}

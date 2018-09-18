@@ -1,0 +1,50 @@
+@import
+				"compass/css3";
+/** 4.0 - Tables **/
+table,
+th,
+td {
+	border: 0 px none;
+}
+table {
+				width: 100%;
+				border-collapse: collapse;
+				border-spacing: 0;
+				margin-bottom: $gutter;
+				caption {
+								color: $table-caption-color;
+								border-bottom: $table-caption-border-bottom;
+				}
+				thead tr {
+								border-bottom: $thead-tr-border-bottom;
+								th {
+												color: $thead-th-color;
+												font-weight: $thead-th-font-weight;
+								}
+				}
+				tbody tr {
+								border-bottom: $tbody-tr-border-bottom;
+								th {
+												color: $tbody-th-color;
+												font-weight: $tbody-th-font-weight;
+								}
+				}
+				tr {
+								th, td {
+												padding-right: 1em;
+												vertical-align: top;
+								}
+				}
+}
+table.colors {
+				tr {
+								th:first-child,
+								td:first-child {
+												width: 50px;
+												div {
+																width: 50px;
+																height: 50px;
+												}
+								}
+				}
+}

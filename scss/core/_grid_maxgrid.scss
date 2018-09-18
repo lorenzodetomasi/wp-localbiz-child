@@ -1,0 +1,7 @@
+.vgrid,
+.hgrid,
+.print {
+  display: none !important;
+}
+@include grid('maxgrid-');
+@include box-model('maxgrid-');

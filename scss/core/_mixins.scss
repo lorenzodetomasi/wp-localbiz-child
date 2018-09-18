@@ -1,0 +1,39 @@
+@import "mixins_grid", "mixins_align", "mixins_margin_padding", "mixins_shadows";
+@mixin screen-reader-text {
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+}
+@mixin abbr-no-border {
+    text-decoration: none;
+    border-bottom: none;
+}
+@mixin clip-path($clip) {
+  -webkit-clip-path: $clip;
+  -moz-clip-path: $clip;
+  -ms-clip-path: $clip;
+  clip-path: $clip;
+}
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+  :-moz-placeholder {
+    color: $color;
+  }
+  ::-moz-placeholder {
+    color: $color;
+    opacity: 1; /* Since FF19 lowers the opacity of the placeholder by default */
+  }
+  :-ms-input-placeholder {
+    color: $color;
+  }
+}
+@mixin text-tape() {
+    @include inline-block;
+    padding: 0 .8em;
+    margin-bottom: .2em;
+}
