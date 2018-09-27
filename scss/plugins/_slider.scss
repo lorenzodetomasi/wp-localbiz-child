@@ -1,0 +1,57 @@
+@import "compass/css3", "settings";
+$slide_height: calc(100vh - #{$hgrid-header-height});
+$slide_max_height: 768px;
+
+#cover,
+#cover.slider .slide img {
+//  max-width: none;
+  max-height: none;
+}
+#cover.slider,
+#cover.bkgslider {
+  max-width: none;
+  width: 100%;
+  height: 53.75vw;
+}
+.slider {
+  width: 100%;
+  position: relative;
+  &,
+  .gallery {
+    min-height: 320px;
+    height: $slide_height;
+  }
+  .slide {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include opacity(0);
+    @if mixin-exists(slider-transition) {
+      @include slider-transition;
+    } @else {
+      @include transition(opacity 1s ease-in-out);
+    }
+    text-align: center;
+    max-height: $slide_height;
+    img {
+      max-width: 100%;
+      max-height: $slide_height;
+      height: auto;
+      width: auto;
+    }
+    &.active {
+      @include opacity(1);
+    }
+    &.lazybkg {
+      height: 100%;
+      background-repeat: no-repeat;
+      @include background-size(cover);
+      @include animation(coverAnimation 20s alternate infinite ease-in-out);
+      background-position: bottom center;
+    }
+  }
+}
