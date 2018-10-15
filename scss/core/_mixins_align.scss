@@ -1,30 +1,50 @@
 @mixin align-container($horizontal: null, $vertical: null, $method: null, $child-width: null, $child-height: null){
 /*
+$horizontal:
+$vertical: 'top' | 'baseline' | 'middle' (center) | 'bottom' | 'justify' (stretch);
         @if $height != null {
                 height: $height;
         }
 */
   @if $method == 'text' {
-    
+    @if $horizontal == 'left' {
+      text-align: left;
+    }
+    @if $horizontal == 'center' {
+      text-align: center;
+    }
+    @if $horizontal == 'right' {
+      text-align: right;
+    }
   } @else if $method == 'float' {
-    
+
   } @else if $method == 'position' {
     position: relative;
   } @else if $method == 'flex' {
-    @if $vertical == 'middle' and $horizontal == 'center' {
-      @include display-flex();
-      @include justify-content(center);
+    @include display-flex();
+    @if $vertical == 'top' {
+      @include align-items(flex-start);
+    } @else if $vertical == 'baseline' {
+      @include align-items(baseline);
+    } @else if $vertical == 'middle' {
       @include align-items(center);
+    } @else if $vertical == 'bottom' {
+      @include align-items(flex-end);
+    } @else if $vertical == 'justify' {
+      @include align-items(stretch);
+    }
+    @if $horizontal == 'center' {
+      @include justify-content(center);
     }
   }
 }
 @mixin align-child($horizontal: null, $vertical: null, $method: null, $width: null, $height: null){
-// Fonti: http://www.w3.org/Style/Examples/007/center.en.html, 
+// Fonti: http://www.w3.org/Style/Examples/007/center.en.html,
 // method: 'text' or 'inline' | 'float' | 'position' | 'flex';
   @if $method == 'text' {
-    
+
   } @else if $method == 'float' {
-    
+
   } @else if $method == 'position' {
     display: block;// useful if child is an inline element
     @if $horizontal == 'center' {
@@ -58,9 +78,9 @@
       bottom: 0; top: 0;
     }
   } @else if $method == 'flex' {
-    
+
   } @else if $width != null and $height != null {
-    
+
   }
 }
 @mixin absolute-positioning($type){
@@ -142,3 +162,78 @@
                 @include translateY(-50%);
         }
 }
+@mixin align($grid){
+  // Flex align
+  .flex {
+    &.#{$grid}children-align-top {
+      @include align-container(null, 'top', 'flex');
+    }
+    &.#{$grid}children-align-middle {
+      @include align-container(null, 'middle', 'flex');
+    }
+    &.#{$grid}children-align-baseline {
+      @include align-container(null, 'baseline', 'flex');
+    }
+    &.#{$grid}children-align-bottom {
+      @include align-container(null, 'bottom', 'flex');
+    }
+  }
+  // Float align
+  .#{$grid}alignnone {
+    margin: rem-calc(10px 5px 10px 0);
+  }
+  .#{$grid}alignleft {
+    float: left;
+  }
+  .#{$grid}alignright {
+    float: right;
+  }
+  .#{$grid}aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // Text align
+  .#{$grid}text-align-left {
+    @include align-container('left', null, $method: 'text');
+  }
+  .#{$grid}text-align-center {
+    @include align-container('center', null, $method: 'text');
+  }
+  .#{$grid}text-align-right {
+    @include align-container('right', null, $method: 'text');
+  }
+}
+/*
+& > .flex-grow1 {// equal width children
+  @include flexbox((
+    flex-grow: 1
+  ));
+}
+&.nowrap {
+  @include flexbox((
+    flex-wrap: nowrap
+  ));
+}
+&.align-top {
+  @include align-items(flex-start);
+}
+&.align-bottom {
+  @include align-items(flex-end);
+}
+&.align-middle {
+  @include align-items(center);
+}
+&.align-baseline {
+  @include align-items(baseline);
+}
+&.align-left {
+  @include justify-content(flex-start);
+}
+&.align-center {
+  @include justify-content(center);
+}
+&.align-right {
+  @include justify-content(flex-end);
+}
+*/

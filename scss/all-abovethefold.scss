@@ -1,7 +1,8 @@
 @import "compass/css3", "settings",
-  "core/basic_layout", 
+  "core/basic_layout",
   "core/grid_all",
   "core/navs",
+  "core/mixins_align",
   "core/align",
   "core/colors_and_backgrounds",
   "core/wordpress",
@@ -53,7 +54,7 @@ body.header-tall {
         height: $hgrid-logo-height;
       }
     }
-  }    
+  }
 }
 body.has_breadcrumbs {
   #main {
@@ -156,7 +157,7 @@ figure.circle {
     height: 12em;
     border-radius: 50%;
     background-repeat: no-repeat;
-  } 
+  }
 }
 .button.emergency {
   background-color: $rosso_carminio;

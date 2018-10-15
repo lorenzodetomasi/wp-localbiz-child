@@ -29,21 +29,38 @@ $touch-size: rem-calc(48px);
 // Logo
 $vgrid-logo-url: url(../images/logo.svg);
 $hgrid-logo-url: url(../images/logo-v.svg);
-$header-top-height: $touch-min-size;// default: $touch-min-size
 $vgrid-logo-height: rem-calc(36px);
+$hgrid-logo-height: rem-calc(48px);
+$tagline-height: rem-calc(22px);
+// Heights
+$header-top-height: $touch-min-size;// default: $touch-min-size
 $vgrid-header-main-height: $touch-size;// default: $touch-size
 $vgrid-header-height: $header-top-height + $vgrid-header-main-height;
-$hgrid-logo-height: rem-calc(48px);
 $hgrid-header-main-height: $touch-size*2;// default: $touch-size
 $hgrid-header-height: $header-top-height + $hgrid-header-main-height;
+$maxgrid-header-main-height: $hgrid-header-main-height;// default: $hgrid-header-main-height
+$maxgrid-header-height: $hgrid-header-height;// default: $hgrid-header-height
 $nav1-height: $touch-size;
-$tagline-height: rem-calc(22px);
+// Margins
+$vgrid-header-margins-h: rem-calc(4px);// default: rem-calc(4px)
+$hgrid-header-margins-h: rem-calc(16px);// default: rem-calc(16px)
+$maxgrid-header-margins-h: $hgrid-header-margins-h;// default: $hgrid-header-margins-h
+// Header tall
+// The header starting height, decreases when the user scrolls the page
+$vgrid-header-tall-height: $vgrid-header-height;
+$hgrid-header-tall-height: $hgrid-header-height;
+$maxgrid-header-tall-height: $hgrid-header-tall-height;// default: $hgrid-header-tall-height
 
 // Content start top
 $vgrid-content-start-top: $vgrid-header-height;
 $hgrid-content-start-top: $hgrid-header-height;
-$vgrid-content-start-top-wpadminbar: $wpadminbar-lt_breakpoint-height + $vgrid-header-height;
-$hgrid-content-start-top-wpadminbar: $wpadminbar-ge_breakpoint-height + $hgrid-header-height;
+$maxgrid-content-start-top: $maxgrid-header-height;
+$vgrid-content-start-top-header-tall: $vgrid-header-height;
+$hgrid-content-start-top-header-tall: $hgrid-header-height;
+$vgrid-content-start-top-wpadminbar: $wpadminbar-lt_breakpoint-height + $vgrid-content-start-top;
+$hgrid-content-start-top-wpadminbar: $wpadminbar-ge_breakpoint-height + $hgrid-content-start-top;
+$vgrid-content-start-top-wpadminbar-header-tall: $wpadminbar-lt_breakpoint-height + $vgrid-content-start-top-header-tall;
+$hgrid-content-start-top-wpadminbar-header-tall: $wpadminbar-ge_breakpoint-height + $hgrid-content-start-top-header-tall;
 
 // Fonts
 $text-font-family: Roboto,Helvetica,Helvetica Neue,sans-serif;
@@ -163,7 +180,7 @@ $tag-hover-color: $bianco;
 // Forms
 @mixin navs-label-style(){
   &,
-  & .text { 
+  & .text {
     color: $nero;
   }
 }

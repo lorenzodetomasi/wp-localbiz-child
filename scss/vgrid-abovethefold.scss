@@ -1,4 +1,5 @@
-@import "compass/css3", "settings";
+@import "compass/css3", "settings",
+  "core/grid_vgrid";
   .vgrid-section-padding-top,
   .vgrid-section {
     padding-top: $hgrid-content-start-top;
